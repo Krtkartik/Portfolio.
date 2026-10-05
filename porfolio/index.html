@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kartikey Tiwari | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --dark:#2C2B30;
+    --mid:#4F4F51;
+    --light:#D6D6D6;
+    --accent:#F58F7C;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--dark);
+    color:var(--light);
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:var(--light);
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+/* RESUME BUTTON */
+.resume-btn{
+    background:var(--accent);
+    padding:8px 15px;
+    border-radius:8px;
+    color:white;
+}
+
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 80px 40px;
+    flex-wrap:wrap;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.white{color:white;}
+.colored{color:var(--accent);}
+
+/* PROFILE */
+.profile{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid var(--accent);
+    box-shadow:0 0 25px rgba(245,143,124,0.6);
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ABOUT */
+.about{
+    padding:0 80px;
+    margin-top:20px;
+}
+
+/* SOCIAL */
+.socials{
+    padding:0 80px;
+    margin-top:20px;
+}
+
+.socials a{
+    margin-right:15px;
+    font-size:22px;
+    color:var(--light);
+}
+
+.socials a:hover{
+    color:var(--accent);
+}
+
+/* BUTTONS */
+.buttons{
+    padding:0 80px;
+    margin-top:20px;
+}
+
+button{
+    padding:10px 18px;
+    margin-right:10px;
+    border:none;
+    border-radius:10px;
+    background:var(--accent);
+    color:white;
+    cursor:pointer;
+}
+
+/* SECTION */
+section{
+    padding:50px 80px;
+}
+
+/* SKILLS */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:12px;
+    margin-top:20px;
+}
+
+.skill{
+    background:var(--mid);
+    padding:10px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* PROJECTS */
+/* PROJECT SECTION */
+.project-container{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    margin-top:20px;
+}
+
+.project-card{
+    background: radial-gradient(circle at 80% 80%, rgba(245,143,124,0.2), #1f1f22);
+    padding:25px;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 25px rgba(245,143,124,0.4);
+}
+.project-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 15px;
+    background:var(--accent);
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:13px;
+    transition:0.3s;
+}
+
+.project-btn:hover{
+    background:#ff6b5e;
+    transform:scale(1.05);
+}
+
+/* ICON */
+.project-card .icon{
+    width:50px;
+    height:50px;
+    background:#2c2b30;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+.project-card .icon i{
+    color:var(--accent);
+    font-size:20px;
+}
+/* leetcode */
+.socials svg{
+    margin-right:15px;
+    color:var(--light);
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.socials svg:hover{
+    color:var(--accent);
+    transform:scale(1.2);
+}
+
+/* TEXT */
+.project-card h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.project-card p{
+    color:#aaa;
+    font-size:14px;
+    margin-bottom:15px;
+    line-height:1.5;
+}
+
+/* TAGS */
+.tags{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.tags span{
+    background:#2c2b30;
+    padding:5px 12px;
+    border-radius:10px;
+    font-size:12px;
+}
+
+/* Certificate */
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.cert{
+    background:var(--mid);
+    padding:12px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:var(--light);
+    font-size:14px;
+    transition:0.3s;
+    border:1px solid transparent;
+}
+
+.cert i{
+    color:var(--accent);
+    font-size:16px;
+}
+
+.cert:hover{
+    background:var(--accent);
+    color:white;
+    transform:scale(1.05);
+}
+/* FOOTER */
+footer{
+    padding:40px;
+    text-align:center;
+    background:black;
+}
+/* Explore button */
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    margin-right:10px;
+    border-radius:10px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff6b5e;
+    transform:scale(1.05);
+}
+/* contact */
+.contact-card{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-item{
+    background:var(--mid);
+    padding:15px 25px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.contact-item i{
+    color:var(--accent);
+    font-size:18px;
+}
+/* POPUP */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) scale(0);
+    width:90%;
+    max-width:600px;
+    background:#1f1f22;
+    padding:30px;
+    border-radius:20px;
+    z-index:2000;
+    transition:0.4s;
+    box-shadow:0 0 40px rgba(245,143,124,0.4);
+    overflow-y:auto;
+    max-height:80vh;
+}
+
+.popup.active{
+    transform:translate(-50%, -50%) scale(1);
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:25px;
+    cursor:pointer;
+    color:var(--accent);
+}
+
+/* SKILLS */
+.popup-skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+}
+
+.popup-skills span{
+    background:#2c2b30;
+    padding:5px 12px;
+    border-radius:10px;
+    font-size:12px;
+}
+
+/* PROJECTS */
+.popup-projects{
+    margin-top:10px;
+}
+
+.popup-projects li{
+    margin-bottom:8px;
+}
+
+.popup-projects a{
+    color:var(--accent);
+    text-decoration:none;
+}
+/* Device Compatible */
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET (768px and below) */
+@media (max-width: 768px){
+
+    header{
+        padding:15px 20px;
+    }
+
+    nav a{
+        margin-left:15px;
+        font-size:14px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:100px 20px 30px;
+    }
+
+    .hero-text{
+        max-width:100%;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .profile{
+        margin-top:20px;
+        width:200px;
+        height:200px;
+    }
+
+    section,
+    .about,
+    .socials,
+    .buttons{
+        padding:20px;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    }
+
+    .project-container{
+        gap:20px;
+    }
+}
+
+
+/* MOBILE (480px and below) */
+@media (max-width: 480px){
+
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        margin-top:10px;
+    }
+
+    nav a{
+        margin:5px 10px 5px 0;
+        font-size:13px;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:1.8rem;
+    }
+
+    .profile{
+        width:160px;
+        height:160px;
+    }
+
+    .buttons .btn{
+        display:block;
+        margin:10px 0;
+        text-align:center;
+    }
+
+    .contact-card{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .project-card{
+        padding:18px;
+    }
+
+    .project-card h3{
+        font-size:18px;
+    }
+
+    .project-card p,
+    .project-card pre{
+        font-size:13px;
+    }
+
+    footer{
+        padding:25px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h2>Portfolio</h2>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="javascript:void(0)" onclick="openPopup('aboutPopup')">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+        <a href="KartikeyResume.pdf" target="_blank" download class="resume-btn">
+    Resume
+</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>
+            <span class="white">Hello!</span><br>
+            <span class="colored">I'm Kartikey Tiwari</span>
+        </h1>
+    </div>
+
+    <div class="profile">
+        <img src="Document/Profile.jpg">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <p class="colored">
+        A passionate Data Analyst skilled in transforming raw data into meaningful insights.
+        Continuously learning and growing in the Data Driven World
+    </p>
+
+    <div class="socials">
+        <a href="https://github.com/Krtkartik" title="GitHub">
+    <i class="fab fa-github"></i>
+</a>
+        <a href="https://www.linkedin.com/in/kartikey-tiwari-a7067831b?utm_source=share_via&utm_content=profile&utm_medium=member_android" title = "LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://leetcode.com/settings/profile/" target="_blank" title="LeetCode">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         width="22" height="22" 
+         viewBox="0 0 24 24" 
+         fill="currentColor">
+        <path d="M13.483 0a1.5 1.5 0 0 1 1.06.44l7.017 7.017a1.5 1.5 0 0 1 0 2.121l-7.017 7.017a1.5 1.5 0 0 1-2.121-2.121L18.378 9H4.5a1.5 1.5 0 0 1 0-3h13.878l-5.956-5.957A1.5 1.5 0 0 1 13.483 0z"/>
+    </svg>
+</a>
+        <a href="Document/KartikeyResume.pdf" title="View Resume">
+    <i class="fas fa-file"></i>
+</a>
+        <a href="#contact" title="Go to Contact">
+    <i class="fas fa-envelope"></i>
+</a>
+       
+    </div>
+
+   <div class="buttons">
+
+    <a href="#projects" class="btn">Explore Projects</a>
+
+    <a href="#certificates" class="btn">Certificates</a>
+
+    <a href="Document/KartikeyResume.pdf" target="_blank" class="btn">Resume</a>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+ 
+<section id="skills">
+    <h2>Tech Skills</h2>
+    <div class="skills-grid">
+
+        <div class="skill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill"><i class="fas fa-code"></i> C</div>
+        <div class="skill"><i class="fas fa-code"></i> C++</div>
+        <div class="skill"><i class="fab fa-java"></i> Java</div>
+
+        <div class="skill"><i class="fas fa-chart-line"></i> Pandas</div>
+        <div class="skill"><i class="fas fa-cubes"></i> NumPy</div>
+        <div class="skill"><i class="fas fa-chart-bar"></i> Matplotlib</div>
+        <div class="skill"><i class="fas fa-chart-area"></i> Seaborn</div>
+        <div class="skill"><i class="fas fa-brain"></i> Scikit-learn</div>
+        <div class="skill"><i class="fas fa-robot"></i> TensorFlow</div>
+
+        <div class="skill"><i class="fas fa-chart-pie"></i> Power BI</div>
+        <div class="skill"><i class="fas fa-file-excel"></i> Excel</div>
+        <div class="skill"><i class="fas fa-database"></i> SQL</div>
+        <div class="skill"><i class="fas fa-chart-line"></i> Tableau</div>
+
+        <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill"><i class="fab fa-js"></i> JS</div>
+        <div class="skill"><i class="fas fa-flask"></i> Flask</div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-container">
+
+         <!-- PROJECT 1 -->
+        <div class="project-card">
+            <div class="icon"><i class="fas fa-layer-group"></i></div>
+
+            <h3>Reatil Data Analysis</h3>
+
+            <p>
+                This project focuses on analyzing retail sales data to identify trends, patterns, and business insights. 
+                The dataset consists of store-level weekly sales along with additional features such as holidays and store types.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Python Libraries</span>
+                <span>PowerBI</span>
+                <span>Analysis</span>
+                <span>Dashboard</span>
+            </div>
+             <!-- BUTTON -->
+    <a href="https://github.com/Krtkartik/Retail-Data-Analysis" target="_blank" class="project-btn">
+        View Project
+    </a>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <div class="icon"><i class="fas fa-layer-group"></i></div>
+
+            <h3>TATA Forage Dashboard</h3>
+
+            <p>
+                Power Bi dashboard built for the TATA Forage virtual experience program, focused on reveue trends, 
+                top customers and product demand.
+            </p>
+
+            <div class="tags">
+                <span>Power BI</span>
+                <span>Python</span>
+                <span>Business Analysis</span>
+                <span>Dashboard</span>
+                <span> Excel (Data Cleaning)</span>
+            </div> <!-- BUTTON -->
+    <a href="https://github.com/Krtkartik/TATA-Forage-Dashboard" target="_blank" class="project-btn">
+        View Project
+    </a>
+
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <div class="icon"><i class="fas fa-layer-group"></i></div>
+
+            <h3>HR Analytics Project </h3>
+
+            <p>
+                Predicting employee attritio using IBM HR dataset. 
+                Includes EDA, data cleaning, visualisations ad logistic Regression model to find the reasons behind employee turnover.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Python libraries</span>
+                <span>Analysis</span>
+                <span>Visualisation</span>
+            </div>
+             <!-- BUTTON -->
+    <a href="https://github.com/Krtkartik/HR-Analytics-Project" target="_blank" class="project-btn">
+        View Project
+    </a>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+            <div class="icon"><i class="fas fa-layer-group"></i></div>
+
+            <h3>Indian Weather Data Analysis</h3>
+
+            <p>
+                Analysing real time weather data for multiple Indian cities.
+                It explores tempreature, humidity and other climate parameters to uncover meaningful patterns and trends.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Python Libraries</span>
+                <span>PowerBI</span>
+                <span>Analysis</span>
+                <span>Visualization</span>
+            </div>
+             <!-- BUTTON -->
+    <a href="https://github.com/Krtkartik/Indian-Weather-Data-Analysis" target="_blank" class="project-btn">
+        View Project
+    </a>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+            <div class="icon"><i class="fas fa-layer-group"></i></div>
+
+            <h3>Monster-Energy-Sales-Performance-Dashboard</h3>
+
+            <p>
+                An interactive Monster Energy Sales Dashboard showing key metrics like Revenue, 
+                Profit, Units Sold, Cost, and Customer Rating. 
+                It also provides product-wise, country-wise, and sales-channel-wise insights, 
+                along with revenue trends and interactive filters for easy analysis.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Python Libraries</span>
+                <span>PowerBI</span>
+                <span>Data Analysis</span>
+                <span>Dashboard</span>
+            </div>
+             <!-- BUTTON -->
+    <a href="https://github.com/Krtkartik/Monster-Energy-Sales-Performance-Dashboard" target="_blank" class="project-btn">
+        View Project
+    </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+    <h2>Certificates</h2>
+
+    <div class="cert-grid">
+
+        <a href="Document/IBM.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> IBM Python
+        </a>
+
+        <a href="Document/Certificat.2.jpg" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Code Quest
+        </a>
+
+        <a href="Document/Internzlearn.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Internzlearn
+        </a>
+
+        <a href="Document/Intership completion.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Internship
+        </a>
+
+        <a href="Document/TATA certificate.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> TATA Forage
+        </a>
+
+        <a href="Document/Excel-certificate.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> MS Excel
+        </a>
+
+        <a href="Document/ML Certificate.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Machine Learning
+        </a>
+
+        <a href="Document/Cyber certificate.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Cyber Hygiene
+        </a>
+
+        <a href="Document/Unified Mentor Certificate.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Unified Mentor
+        </a>
+        <a href="Document/Deloitte Data Analyst Virtual Internship.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Deloitte
+        </a>
+        <a href="Document/Code_X.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Code_x
+        </a>
+        <a href="Document/Geerative_AI.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Generative AI
+        </a>
+         <a href="Document/IBM Data Science.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Data Science 
+        </a>
+        <a href="Document/IBM.png" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Python for DataScience 
+        </a>
+        <a href="Document/Data Analysis with Python.pdf" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Data Analysis with Python
+        </a>
+        <a href="Document/IBM DS0103EN Certificate _ SRMCEM.pdf" target="_blank" class="cert">
+            <i class="fas fa-award"></i> Data Science Methodology
+        </a>
+        <a href="Document/AI Analyst-certificate.pdf" target="_blank" class="cert">
+            <i class="fas fa-award"></i> AI Analyst
+        </a>
+        
+        
+        
+    </div>
+</section>
+<!-- CONTACT -->
+<footer id="contact">
+
+    <h2>Contact Me</h2>
+
+    <div class="contact-card">
+        
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p>+91 8273928431</p>
+        </div>
+
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>eth.kartikey8273@gmail.com</p>
+        </div>
+
+    </div>
+
+    <h3>Kartikey Tiwari</h3>
+    <p>Data Analyst passionate about Data & AI</p>
+
+    <div class="socials">
+        <a href="https://github.com/Krtkartik" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+</a>
+        <a href="https://www.linkedin.com/in/kartikey-tiwari-a7067831b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="blank" title = "LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eth.kartikey8273@gmail.com" target="_blank">
+            <i class="fas fa-envelope"></i>
+</a>
+    </div>
+    
+
+    <p>      © 2026 Kartikey Tiwari 
+        •Data Analyst      •Data Scientist 
+ 
+</p>
+</footer>
+<!-- ABOUT FULL POPUP -->
+<div id="aboutPopup" class="popup">
+
+    <span class="close-btn" onclick="closePopup('aboutPopup')">&times;</span>
+
+    <h2>About Me</h2>
+
+    <p>
+        Hello, 
+        I’m Kartikey Tiwari — 
+        A dedicated and aspiring Data Scientist currently pursuing a Bachelor of Computer Applications (BCA) 
+        with a specialization in Data Science and Artificial Intelligence. 
+        
+        I have a strong interest in working with data to uncover meaningful insights and support data-driven decision-making. 
+        I am building a solid foundation in Python and its key libraries such as NumPy, Pandas, and Matplotlib, 
+        along with practical skills in SQL for data management and querying.
+        
+        In addition, I am proficient in data visualization and business intelligence tools like Power BI, 
+        Tableau, and Microsoft Excel, which help me transform complex data into clear and actionable insights. 
+ 
+ I enjoy exploring datasets, analyzing trends, and presenting findings in a simple and impactful way. 
+ I am continuously learning and working on real-world projects to strengthen my analytical thinking and technical skills, 
+ with the goal of becoming a professional Data Scientist.
+</p><br>
+    <!-- SKILLS -->
+    <h3>Skills</h3>
+    <div class="popup-skills">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Matplotlib</span>
+        <span>Seaborn</span>
+        <span>Scikitlearn</span>
+        <span>Tensowflow</span> 
+        <span>Power BI</span>
+        <span>SQL</span>
+        <span>Excel</span> 
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>C</span>
+        <span>C++</span>
+        <span>Java</span>  
+    </div>
+
+    <!-- PROJECTS -->
+    <h3>Projects</h3>
+    <ul class="popup-projects">
+    
+        <li><a href="https://github.com/Krtkartik/TATA-Forage-Dashboard" target="_blank">Retail Data Analysis</a></li>
+        <li><a href="https://github.com/Krtkartik/TATA-Forage-Dashboard" target="_blank">TATA Dashboard</a></li>
+        <li><a href="https://github.com/Krtkartik/Indian-Weather-Data-Analysis" target="_blank">Weather Analysis</a></li>
+        <li><a href="https://github.com/Krtkartik/HR-Analytics-Project" target="_blank">HR Analytics Project</a></li>
+        <li><a href="https://github.com/Krtkartik/Monster-Energy-Sales-Performance-Dashboard" target ="_blank">Monster Energy Drink</a></li>
+ 
+    </ul>
+
+</div>
+
+<script>
+function openPopup(id){
+    document.getElementById(id).classList.add("active");
+}
+
+function closePopup(id){
+    document.getElementById(id).classList.remove("active");
+}
+</script>
+
+</body>
+</html>
